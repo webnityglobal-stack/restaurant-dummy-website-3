@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", () => {
 
   // ==========================================
@@ -33,7 +32,98 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // ==========================================
-  // 2. HELPER FUNCTIONS
+  // 2. SEARCH POPUP FUNCTIONALITY
+  // ==========================================
+
+  const searchToggle = document.getElementById("searchToggle");
+  const searchOverlay = document.getElementById("searchOverlay");
+  const searchInput = document.getElementById("searchInput");
+  const searchClose = document.getElementById("searchClose");
+  const searchSubmit = document.getElementById("searchSubmit");
+
+  function openSearchPopup(event) {
+    if (event) event.preventDefault();
+
+    if (!searchOverlay) {
+      console.error("Search popup HTML not found!");
+      return;
+    }
+
+    searchOverlay.classList.add("active");
+    searchOverlay.setAttribute("aria-hidden", "false");
+    document.body.classList.add("search-open");
+
+    setTimeout(() => {
+      searchInput?.focus();
+    }, 100);
+  }
+
+  function closeSearchPopup() {
+    if (!searchOverlay) return;
+
+    searchOverlay.classList.remove("active");
+    searchOverlay.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("search-open");
+  }
+
+  if (searchToggle) {
+    searchToggle.addEventListener("click", openSearchPopup);
+  } else {
+    console.warn("Search button #searchToggle not found!");
+  }
+
+  if (searchClose) {
+    searchClose.addEventListener("click", closeSearchPopup);
+  }
+
+  if (searchOverlay) {
+    searchOverlay.addEventListener("click", (event) => {
+      if (event.target === searchOverlay) {
+        closeSearchPopup();
+      }
+    });
+  }
+
+  function searchProduct() {
+    const query = searchInput?.value.trim();
+
+    if (!query) {
+      searchInput?.focus();
+      return;
+    }
+
+    window.location.href =
+      `../shop.html?search=${encodeURIComponent(query)}`;
+  }
+
+  if (searchSubmit) {
+    searchSubmit.addEventListener("click", searchProduct);
+  }
+
+  if (searchInput) {
+    searchInput.addEventListener("keydown", (event) => {
+
+      if (event.key === "Enter") {
+        event.preventDefault();
+        searchProduct();
+      }
+
+      if (event.key === "Escape") {
+        closeSearchPopup();
+      }
+
+    });
+  }
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeSearchPopup();
+    }
+  });
+
+
+  // ==========================================
+  // 3. HELPER FUNCTIONS
   // ==========================================
 
   function getCart() {
@@ -80,7 +170,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // ==========================================
-  // 3. UPDATE HEADER CART COUNT
+  // 4. UPDATE HEADER CART COUNT
   // ==========================================
 
   function updateHeaderCount(cart) {
@@ -97,7 +187,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // ==========================================
-  // 4. CALCULATE ORDER TOTALS
+  // 5. CALCULATE ORDER TOTALS
   // ==========================================
 
   function calculateTotals(cart) {
@@ -130,7 +220,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // ==========================================
-  // 5. RENDER CART PRODUCTS
+  // 6. RENDER CART PRODUCTS
   // ==========================================
 
   function renderCart() {
@@ -265,7 +355,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // ==========================================
-  // 6. UPDATE ORDER SUMMARY
+  // 7. UPDATE ORDER SUMMARY
   // ==========================================
 
   function updateSummary(cart) {
@@ -316,7 +406,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // ==========================================
-  // 7. QUANTITY & REMOVE EVENTS
+  // 8. QUANTITY & REMOVE EVENTS
   // ==========================================
 
   if (cartItems) {
@@ -387,7 +477,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // ==========================================
-  // 8. CLEAR ENTIRE CART
+  // 9. CLEAR ENTIRE CART
   // ==========================================
 
   if (clearCartButton) {
@@ -423,7 +513,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // ==========================================
-  // 9. APPLY COUPON
+  // 10. APPLY COUPON
   // ==========================================
 
   if (applyCoupon) {
@@ -439,15 +529,19 @@ document.addEventListener("DOMContentLoaded", () => {
       const totals = calculateTotals(cart);
 
       if (!code) {
-        couponMessage.textContent = "Please enter a coupon code.";
+        if (couponMessage) {
+          couponMessage.textContent = "Please enter a coupon code.";
+        }
         return;
       }
 
       if (code === "FOODORA10") {
 
         if (totals.subtotal < 499) {
-          couponMessage.textContent =
-            "Minimum order value of ₹499 is required.";
+          if (couponMessage) {
+            couponMessage.textContent =
+              "Minimum order value of ₹499 is required.";
+          }
           return;
         }
 
@@ -455,10 +549,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         localStorage.setItem(COUPON_KEY, code);
 
-        couponMessage.textContent =
-          "Coupon applied successfully! You saved 10%.";
+        if (couponMessage) {
+          couponMessage.textContent =
+            "Coupon applied successfully! You saved 10%.";
 
-        couponMessage.style.color = "#3d995e";
+          couponMessage.style.color = "#3d995e";
+        }
 
         updateSummary(cart);
 
@@ -470,9 +566,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         localStorage.removeItem(COUPON_KEY);
 
-        couponMessage.textContent = "Invalid coupon code.";
-
-        couponMessage.style.color = "#d94a4a";
+        if (couponMessage) {
+          couponMessage.textContent = "Invalid coupon code.";
+          couponMessage.style.color = "#d94a4a";
+        }
 
         updateSummary(cart);
 
@@ -484,7 +581,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // ==========================================
-  // 10. RESTORE SAVED COUPON
+  // 11. RESTORE SAVED COUPON
   // ==========================================
 
   if (appliedCoupon && couponInput) {
@@ -500,7 +597,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // ==========================================
-  // 11. CHECKOUT BUTTON
+  // 12. CHECKOUT BUTTON
   // ==========================================
 
   if (checkoutButton) {
@@ -518,7 +615,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // ==========================================
-  // 12. INITIALIZE CART
+  // 13. INITIALIZE CART
   // ==========================================
 
   renderCart();

@@ -1,0 +1,354 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contact Us | Foodora</title>
+  <meta name="description" content="Contact Foodora for product enquiries, orders and customer support.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="contact.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+
+    <a href="index.html" class="logo">
+      foodora<span>.</span>
+      <small>GOOD FOOD. GOOD MOOD.</small>
+    </a>
+
+    <nav class="navbar" id="navbar">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+
+      <button class="icon-btn search-toggle" id="searchToggle" type="button">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+
+      <a href="wishlist.html" class="icon-btn">
+        <i class="fa-regular fa-heart"></i>
+      </a>
+
+      <a href="cart.html" class="cart-icon">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span id="cartCount">0</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- CONTACT HERO -->
+    <section class="contact-hero">
+      <div class="contact-hero-content">
+        <span class="section-label">WE ARE HERE FOR YOU</span>
+
+        <h1>Let's Talk About <em>Good Food.</em></h1>
+
+        <p>
+          Have a question, suggestion or need help with your order?
+          We'd love to hear from you. Get in touch with our team.
+        </p>
+      </div>
+    </section>
+
+    <!-- CONTACT INFORMATION -->
+    <section class="contact-info-section">
+
+      <div class="contact-heading">
+        <span class="section-label">GET IN TOUCH</span>
+        <h2>We'd Love To <em>Hear From You.</em></h2>
+        <p>Reach out to us through any of the following channels.</p>
+      </div>
+
+      <div class="contact-info-grid">
+
+        <div class="contact-info-card">
+          <div class="contact-icon">
+            <i class="fa-solid fa-phone"></i>
+          </div>
+          <h3>Call Us</h3>
+          <p>Talk to our support team.</p>
+          <a href="tel:+919876543210">+91 98765 43210</a>
+        </div>
+
+        <div class="contact-info-card">
+          <div class="contact-icon">
+            <i class="fa-solid fa-envelope"></i>
+          </div>
+          <h3>Email Us</h3>
+          <p>Send us your questions.</p>
+          <a href="mailto:hello@foodora.com">hello@foodora.com</a>
+        </div>
+
+        <div class="contact-info-card">
+          <div class="contact-icon">
+            <i class="fa-solid fa-location-dot"></i>
+          </div>
+          <h3>Our Location</h3>
+          <p>We are based in</p>
+          <span>India</span>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- CONTACT FORM -->
+    <section class="contact-main">
+
+      <div class="contact-form-image">
+        <img
+          src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=900&auto=format&fit=crop"
+          alt="Fresh food preparation">
+
+        <div class="contact-image-content">
+          <span>FOODORA</span>
+          <h2>Good Food.<br><em>Good Conversations.</em></h2>
+          <p>We're always happy to connect with our customers.</p>
+        </div>
+      </div>
+
+      <div class="contact-form-wrapper">
+
+        <span class="section-label">SEND US A MESSAGE</span>
+        <h2>How Can We <em>Help?</em></h2>
+
+        <p class="form-description">
+          Fill out the form below and our team will get back to you.
+        </p>
+
+        <form id="contactForm">
+
+          <div class="form-group">
+            <label for="contactName">Full Name *</label>
+            <input
+              type="text"
+              id="contactName"
+              name="name"
+              placeholder="Enter your full name"
+              required>
+          </div>
+
+          <div class="form-row">
+
+            <div class="form-group">
+              <label for="contactEmail">Email Address *</label>
+              <input
+                type="email"
+                id="contactEmail"
+                name="email"
+                placeholder="Enter your email"
+                required>
+            </div>
+
+            <div class="form-group">
+              <label for="contactPhone">Phone Number</label>
+              <input
+                type="tel"
+                id="contactPhone"
+                name="phone"
+                placeholder="Enter phone number"
+                pattern="[0-9+\-\s]{10,15}">
+            </div>
+
+          </div>
+
+          <div class="form-group">
+            <label for="contactSubject">Subject *</label>
+            <select id="contactSubject" name="subject" required>
+              <option value="">Select a subject</option>
+              <option value="Order Enquiry">Order Enquiry</option>
+              <option value="Product Information">Product Information</option>
+              <option value="Shipping & Delivery">Shipping & Delivery</option>
+              <option value="Returns & Refunds">Returns & Refunds</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="contactMessage">Your Message *</label>
+            <textarea
+              id="contactMessage"
+              name="message"
+              rows="5"
+              placeholder="Write your message here..."
+              required></textarea>
+          </div>
+
+          <button type="submit" class="contact-submit">
+            Send Message
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+
+          <p id="contactStatus" class="contact-status" aria-live="polite"></p>
+
+        </form>
+
+      </div>
+
+    </section>
+
+    <!-- FAQ -->
+    <section class="contact-faq">
+
+      <span class="section-label">COMMON QUESTIONS</span>
+      <h2>Frequently Asked <em>Questions</em></h2>
+
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-question">
+            How can I track my order?
+            <i class="fa-solid fa-plus"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Visit the order tracking section on our website to check your order status.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            How can I know more about a product?
+            <i class="fa-solid fa-plus"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Visit our Shop page to explore product details and available information.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            How can I contact customer support?
+            <i class="fa-solid fa-plus"></i>
+          </button>
+          <div class="faq-answer">
+            <p>You can contact us through our email address or phone number listed above.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Can I enquire about bulk orders?
+            <i class="fa-solid fa-plus"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Yes, send us your requirements using the contact form and our team can assist you.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <div class="footer-main">
+
+      <div class="footer-brand">
+        <a href="index.html" class="logo footer-logo">
+          foodora<span>.</span>
+          <small>GOOD FOOD. GOOD MOOD.</small>
+        </a>
+
+        <p>
+          Bringing good food and better experiences
+          closer to your everyday life.
+        </p>
+
+        <div class="social-links">
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-column">
+        <h4>QUICK LINKS</h4>
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="shop.html">Categories</a>
+        <a href="about.html">About Us</a>
+      </div>
+
+      <div class="footer-column">
+        <h4>CUSTOMER CARE</h4>
+        <a href="contact.html">Contact Us</a>
+        <a href="#">Shipping Policy</a>
+        <a href="#">Return Policy</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+
+      <div class="footer-column">
+        <h4>GET IN TOUCH</h4>
+        <p><i class="fa-solid fa-envelope"></i> hello@foodora.com</p>
+        <p><i class="fa-solid fa-phone"></i> +91 98765 43210</p>
+        <p><i class="fa-solid fa-location-dot"></i> India</p>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> Foodora. All Rights Reserved.</p>
+      <p>MADE FOR FOOD LOVERS.</p>
+    </div>
+
+  </footer>
+
+  <!-- SEARCH POPUP -->
+  <div class="search-overlay" id="searchOverlay" aria-hidden="true">
+
+    <div class="search-box" role="dialog" aria-modal="true">
+
+      <div class="search-input-wrap">
+
+        <input
+          type="search"
+          id="searchInput"
+          placeholder="Search food products...">
+
+        <button class="search-submit" id="searchSubmit" type="button">
+          Search
+        </button>
+
+        <button class="search-close" id="searchClose" type="button">
+          &times;
+        </button>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="app.js"></script>
+  <script src="contact.js"></script>
+
+</body>
+</html>

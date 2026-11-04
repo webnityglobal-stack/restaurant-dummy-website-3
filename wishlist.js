@@ -315,4 +315,59 @@ document.addEventListener("DOMContentLoaded", () => {
     updateCartCount();
     renderWishlist();
 
+});document.addEventListener("DOMContentLoaded", () => {
+
+    const searchToggle = document.getElementById("searchToggle");
+    const searchOverlay = document.getElementById("searchOverlay");
+    const searchInput = document.getElementById("searchInput");
+    const searchClose = document.getElementById("searchClose");
+    const searchSubmit = document.getElementById("searchSubmit");
+
+    // OPEN SEARCH
+    searchToggle?.addEventListener("click", () => {
+        searchOverlay?.classList.add("active");
+        searchOverlay?.setAttribute("aria-hidden", "false");
+        document.body.classList.add("search-open");
+
+        setTimeout(() => searchInput?.focus(), 100);
+    });
+
+    // CLOSE SEARCH
+    function closeSearch() {
+        searchOverlay?.classList.remove("active");
+        searchOverlay?.setAttribute("aria-hidden", "true");
+        document.body.classList.remove("search-open");
+    }
+
+    searchClose?.addEventListener("click", closeSearch);
+
+    searchOverlay?.addEventListener("click", (e) => {
+        if (e.target === searchOverlay) {
+            closeSearch();
+        }
+    });
+
+    // SEARCH PRODUCTS
+    function performSearch() {
+        const query = searchInput?.value.trim();
+
+        if (query) {
+            window.location.href =
+                `../shop.html?search=${encodeURIComponent(query)}`;
+        }
+    }
+
+    searchSubmit?.addEventListener("click", performSearch);
+
+    searchInput?.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") performSearch();
+        if (e.key === "Escape") closeSearch();
+    });
+
+    // FOOTER YEAR
+    const year = document.getElementById("year");
+    if (year) {
+        year.textContent = new Date().getFullYear();
+    }
+
 });

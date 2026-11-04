@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,52 +21,56 @@
 
 <body>
 
-    <!-- Announcement Bar -->
-    <div class="announcement-bar">
-        <p>
-            <i class="fa-solid fa-truck-fast"></i>
-            Free delivery on orders above ₹499
-        </p>
-    </div>
-
-    <!-- Header -->
+    <!-- HEADER -->
     <header class="header">
-        <div class="container header-container">
 
-            <a href="../index.html" class="logo">
-                FOODORA<span>.</span>
-                <small>GOOD FOOD. GOOD MOOD.</small>
+        <a href="../index.html" class="logo">
+            foodora<span>.</span>
+            <small>GOOD FOOD. GOOD MOOD.</small>
+        </a>
+
+        <nav class="navbar" id="navbar">
+            <a href="../index.html">Home</a>
+            <a href="../shop.html">Shop</a>
+            <a href="../about.html">About</a>
+            <a href="../contact.html">Contact</a>
+        </nav>
+
+        <div class="header-actions">
+
+            <!-- SEARCH BUTTON -->
+            <button class="icon-btn search-toggle"
+                    id="searchToggle"
+                    type="button"
+                    aria-label="Open Search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+
+            <!-- WISHLIST -->
+            <a href="wishlist.html" class="icon-btn" aria-label="Wishlist">
+                <i class="fa-regular fa-heart"></i>
             </a>
 
-            <nav class="navbar" id="navbar">
-                <a href="../index.html">Home</a>
-                <a href="shop.html">Shop</a>
-                <a href="shop.html">Categories</a>
-                <a href="../index.html#bestSellers">Best Sellers</a>
-                <a href="about.html">Our Story</a>
-            </nav>
+            <!-- CART -->
+            <a href="../cart.html" class="cart-icon" aria-label="Shopping cart">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span id="cartCount">0</span>
+            </a>
 
-            <div class="header-actions">
-
-                <a href="wishlist.html" class="header-icon active">
-                    <i class="fa-regular fa-heart"></i>
-                </a>
-
-                <a href="cart.html" class="header-icon cart-icon">
-                    <i class="fa-solid fa-bag-shopping"></i>
-                    <span class="cart-count" id="cartCount">0</span>
-                </a>
-
-                <button class="menu-toggle" id="menuToggle">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
-
-            </div>
+            <!-- MOBILE MENU -->
+            <button class="menu-toggle"
+                    id="menuToggle"
+                    aria-label="Open navigation"
+                    aria-expanded="false">
+                <span></span>
+                <span></span>
+            </button>
 
         </div>
     </header>
 
-    <!-- Wishlist Hero -->
+
+    <!-- WISHLIST HERO -->
     <section class="wishlist-hero">
         <div class="container">
 
@@ -76,6 +81,7 @@
             </div>
 
             <div class="wishlist-hero-content">
+
                 <span class="section-tag">YOUR FAVOURITES</span>
 
                 <h1>My <span>Wishlist</span></h1>
@@ -89,33 +95,36 @@
                     <i class="fa-regular fa-heart"></i>
                     <span id="wishlistCount">0 Products Saved</span>
                 </div>
-            </div>
 
+            </div>
         </div>
     </section>
 
-    <!-- Wishlist Section -->
+
+    <!-- WISHLIST SECTION -->
     <section class="wishlist-section">
         <div class="container">
 
             <div class="wishlist-heading">
+
                 <div>
                     <span class="section-tag">SAVED WITH LOVE</span>
                     <h2>Your Favourite Products</h2>
                 </div>
 
-                <a href="shop.html" class="continue-shopping">
+                <a href="../shop.html" class="continue-shopping">
                     Continue Shopping
                     <i class="fa-solid fa-arrow-right"></i>
                 </a>
+
             </div>
 
-            <!-- Wishlist Products -->
+            <!-- WISHLIST PRODUCTS -->
             <div class="wishlist-grid" id="wishlistProducts">
                 <!-- Products will load through wishlist.js -->
             </div>
 
-            <!-- Empty Wishlist -->
+            <!-- EMPTY WISHLIST -->
             <div class="wishlist-empty" id="emptyWishlist">
 
                 <div class="empty-wishlist-icon">
@@ -129,7 +138,7 @@
                     Explore our delicious collection and find something you love.
                 </p>
 
-                <a href="shop.html" class="btn btn-primary">
+                <a href="../shop.html" class="btn btn-primary">
                     <i class="fa-solid fa-bag-shopping"></i>
                     Explore Products
                 </a>
@@ -139,7 +148,8 @@
         </div>
     </section>
 
-    <!-- Shopping Benefits -->
+
+    <!-- SHOPPING BENEFITS -->
     <section class="wishlist-benefits">
         <div class="container">
 
@@ -178,65 +188,125 @@
         </div>
     </section>
 
-    <!-- Footer -->
+
+    <!-- FOOTER -->
     <footer class="footer">
-        <div class="container">
 
-            <div class="footer-grid">
+        <div class="footer-main">
 
-                <div class="footer-about">
-                    <a href="../index.html" class="footer-logo">
-                        FOODORA<span>.</span>
+            <div class="footer-brand">
+
+                <a href="../index.html" class="logo footer-logo">
+                    foodora<span>.</span>
+                    <small>GOOD FOOD. GOOD MOOD.</small>
+                </a>
+
+                <p>
+                    Bringing good food and better experiences
+                    closer to your everyday life.
+                </p>
+
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
                     </a>
 
-                    <p>
-                        Good food brings happiness.
-                        Discover quality food products made for
-                        your everyday moments.
-                    </p>
+                    <a href="#" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
 
-                    <div class="footer-socials">
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
-                    </div>
-                </div>
-
-                <div class="footer-links">
-                    <h3>Quick Links</h3>
-                    <a href="../index.html">Home</a>
-                    <a href="shop.html">Shop</a>
-                    <a href="about.html">About Us</a>
-                    <a href="contact.html">Contact</a>
-                </div>
-
-                <div class="footer-links">
-                    <h3>Customer Care</h3>
-                    <a href="contact.html">Contact Us</a>
-                    <a href="cart.html">My Cart</a>
-                    <a href="wishlist.html">My Wishlist</a>
-                    <a href="#">Shipping Policy</a>
-                </div>
-
-                <div class="footer-links">
-                    <h3>Get In Touch</h3>
-                    <p><i class="fa-solid fa-envelope"></i> hello@foodora.com</p>
-                    <p><i class="fa-solid fa-phone"></i> +91 98765 43210</p>
+                    <a href="#" aria-label="Pinterest">
+                        <i class="fa-brands fa-pinterest-p"></i>
+                    </a>
                 </div>
 
             </div>
 
-            <div class="footer-bottom">
-                <p>© <span id="year"></span> FOODORA. All Rights Reserved.</p>
-                <p>Made with <i class="fa-solid fa-heart"></i> for food lovers.</p>
+            <div class="footer-column">
+                <h4>QUICK LINKS</h4>
+                <a href="../index.html">Home</a>
+                <a href="../shop.html">Shop</a>
+                <a href="../shop.html">Categories</a>
+                <a href="../about.html">About Us</a>
+            </div>
+
+            <div class="footer-column">
+                <h4>CUSTOMER CARE</h4>
+                <a href="../contact.html">Contact Us</a>
+                <a href="#">Shipping Policy</a>
+                <a href="#">Return Policy</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+
+            <div class="footer-column">
+                <h4>GET IN TOUCH</h4>
+                <p>
+                    <i class="fa-solid fa-envelope"></i>
+                    hello@foodora.com
+                </p>
+                <p>
+                    <i class="fa-solid fa-phone"></i>
+                    +91 98765 43210
+                </p>
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    India
+                </p>
             </div>
 
         </div>
+
+        <div class="footer-bottom">
+            <p>© <span id="year"></span> Foodora. All Rights Reserved.</p>
+            <p>MADE FOR FOOD LOVERS.</p>
+        </div>
+
     </footer>
 
-    <!-- Toast -->
+
+    <!-- SEARCH POPUP -->
+    <div class="search-overlay"
+         id="searchOverlay"
+         aria-hidden="true">
+
+        <div class="search-box"
+             role="dialog"
+             aria-modal="true"
+             aria-label="Search products">
+
+            <div class="search-input-wrap">
+
+                <input
+                    type="search"
+                    id="searchInput"
+                    placeholder="Search food products..."
+                    aria-label="Search food products">
+
+                <button
+                    class="search-submit"
+                    id="searchSubmit"
+                    type="button">
+                    Search
+                </button>
+
+                <button
+                    class="search-close"
+                    id="searchClose"
+                    type="button"
+                    aria-label="Close Search">
+                    &times;
+                </button>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- TOAST -->
     <div class="toast" id="toast"></div>
 
+
+    <!-- JAVASCRIPT -->
     <script src="../app.js"></script>
     <script src="wishlist.js"></script>
 

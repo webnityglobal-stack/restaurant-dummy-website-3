@@ -9,66 +9,69 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="cart.css">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body>
 
-  <!-- Announcement -->
-  <div class="announcement-bar">
-    <p>FREE SHIPPING ON ORDERS ABOVE ₹499 | GOOD FOOD. BETTER LIVING.</p>
-  </div>
-
-  <!-- Header -->
+  <!-- HEADER -->
   <header class="header">
-    <div class="header-container">
 
-      <a href="../index.html" class="logo">
-        FOOD<span>ORA</span><small>.</small>
+    <a href="../index.html" class="logo">
+      foodora<span>.</span>
+      <small>GOOD FOOD. GOOD MOOD.</small>
+    </a>
+
+    <nav class="navbar" id="navbar">
+      <a href="../index.html">Home</a>
+      <a href="../shop.html">Shop</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+
+      <!-- SEARCH BUTTON -->
+      <button class="icon-btn search-toggle" id="searchToggle" type="button" aria-label="Open Search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+
+      <!-- WISHLIST -->
+      <a href="wishlist.html" class="icon-btn" aria-label="Wishlist">
+        <i class="fa-regular fa-heart"></i>
       </a>
 
-      <nav class="navbar" id="navbar">
-        <a href="../index.html">Home</a>
-        <a href="shop.html">Shop</a>
-        <a href="../index.html#categories">Categories</a>
-        <a href="../index.html#best-sellers">Best Sellers</a>
-        <a href="../index.html#our-story">Our Story</a>
-      </nav>
+      <!-- CART -->
+      <a href="cart.html" class="cart-icon" aria-label="Shopping cart">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span id="cartCount">0</span>
+      </a>
 
-      <div class="header-actions">
-        <button class="header-icon" aria-label="Search">
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
-
-        <a href="wishlist.html" class="header-icon" aria-label="Wishlist">
-          <i class="fa-regular fa-heart"></i>
-        </a>
-
-        <a href="cart.html" class="header-icon cart-icon" aria-label="Cart">
-          <i class="fa-solid fa-bag-shopping"></i>
-          <span class="cart-count" id="cartCount">0</span>
-        </a>
-
-        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
+      <!-- MOBILE MENU -->
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+      </button>
 
     </div>
   </header>
 
 
-  <!-- Cart Hero -->
+  <!-- CART HERO -->
   <section class="cart-hero">
+
     <div class="cart-hero-content">
+
       <span>YOUR FOODORA BAG</span>
+
       <h1>Shopping Cart</h1>
+
       <p>Your favourite goodness, all in one place.</p>
 
       <div class="cart-breadcrumb">
@@ -76,32 +79,36 @@
         <i class="fa-solid fa-chevron-right"></i>
         <span>Shopping Cart</span>
       </div>
+
     </div>
+
   </section>
 
 
-  <!-- Cart Section -->
+  <!-- CART SECTION -->
   <section class="cart-section">
 
     <div class="cart-layout">
 
-      <!-- Cart Products -->
+      <!-- CART PRODUCTS -->
       <div class="cart-main">
 
         <div class="cart-heading">
+
           <div>
             <h2>Your Cart Items</h2>
             <p><span id="cartItemCount">0</span> items in your bag</p>
           </div>
 
-          <a href="shop.html">
+          <a href="../shop.html">
             CONTINUE SHOPPING
             <i class="fa-solid fa-arrow-right"></i>
           </a>
+
         </div>
 
 
-        <!-- Cart Table -->
+        <!-- CART TABLE -->
         <div class="cart-table-wrapper">
 
           <table class="cart-table">
@@ -117,9 +124,7 @@
             </thead>
 
             <tbody id="cartItems">
-
-              <!-- Products will be loaded through cart.js -->
-
+              <!-- Products loaded through cart.js -->
             </tbody>
 
           </table>
@@ -127,7 +132,7 @@
         </div>
 
 
-        <!-- Empty Cart -->
+        <!-- EMPTY CART -->
         <div class="empty-cart" id="emptyCart">
 
           <div class="empty-cart-icon">
@@ -141,7 +146,7 @@
             Explore our collection and find your favourites.
           </p>
 
-          <a href="shop.html" class="empty-cart-button">
+          <a href="../shop.html" class="empty-cart-button">
             EXPLORE PRODUCTS
             <i class="fa-solid fa-arrow-right"></i>
           </a>
@@ -149,9 +154,10 @@
         </div>
 
 
-        <!-- Continue Shopping -->
+        <!-- CART ACTIONS -->
         <div class="cart-bottom-actions">
-          <a href="shop.html">
+
+          <a href="../shop.html">
             <i class="fa-solid fa-arrow-left"></i>
             Continue Shopping
           </a>
@@ -160,12 +166,13 @@
             <i class="fa-regular fa-trash-can"></i>
             Clear Cart
           </button>
+
         </div>
 
       </div>
 
 
-      <!-- Order Summary -->
+      <!-- ORDER SUMMARY -->
       <aside class="cart-summary">
 
         <h2>Order Summary</h2>
@@ -186,9 +193,11 @@
         </div>
 
         <div class="coupon-section">
+
           <label for="couponCode">Have a Coupon Code?</label>
 
           <div class="coupon-input">
+
             <input
               type="text"
               id="couponCode"
@@ -196,9 +205,11 @@
             >
 
             <button id="applyCoupon">APPLY</button>
+
           </div>
 
           <p id="couponMessage"></p>
+
         </div>
 
         <div class="summary-line discount-line">
@@ -222,12 +233,15 @@
         </div>
 
         <div class="payment-methods">
+
           <span>WE ACCEPT</span>
+
           <div>
             <i class="fa-brands fa-cc-visa"></i>
             <i class="fa-brands fa-cc-mastercard"></i>
             <i class="fa-brands fa-google-pay"></i>
           </div>
+
         </div>
 
       </aside>
@@ -237,7 +251,7 @@
   </section>
 
 
-  <!-- Benefits -->
+  <!-- BENEFITS -->
   <section class="cart-benefits">
 
     <div class="cart-benefit">
@@ -267,56 +281,98 @@
   </section>
 
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer class="footer">
 
-    <div class="footer-container">
+    <div class="footer-main">
 
       <div class="footer-brand">
-        <a href="../index.html" class="logo">FOOD<span>ORA</span><small>.</small></a>
-        <p>Good food, thoughtfully selected. Bringing goodness to your everyday life.</p>
+
+        <a href="../index.html" class="logo footer-logo">
+          foodora<span>.</span>
+          <small>GOOD FOOD. GOOD MOOD.</small>
+        </a>
+
+        <p>
+          Bringing good food and better experiences
+          closer to your everyday life.
+        </p>
 
         <div class="social-links">
-          <a href="#"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
         </div>
+
       </div>
 
-      <div class="footer-links">
-        <h4>Explore</h4>
+      <div class="footer-column">
+        <h4>QUICK LINKS</h4>
         <a href="../index.html">Home</a>
-        <a href="shop.html">Shop All</a>
-        <a href="../index.html#categories">Categories</a>
-        <a href="../index.html#our-story">Our Story</a>
+        <a href="../shop.html">Shop</a>
+        <a href="../shop.html">Categories</a>
+        <a href="../about.html">About Us</a>
       </div>
 
-      <div class="footer-links">
-        <h4>Customer Care</h4>
-        <a href="contact.html">Contact Us</a>
-        <a href="cart.html">My Cart</a>
-        <a href="wishlist.html">Wishlist</a>
-        <a href="about.html">About Us</a>
+      <div class="footer-column">
+        <h4>CUSTOMER CARE</h4>
+        <a href="../contact.html">Contact Us</a>
+        <a href="#">Shipping Policy</a>
+        <a href="#">Return Policy</a>
+        <a href="#">Privacy Policy</a>
       </div>
 
-      <div class="footer-links">
-        <h4>Get In Touch</h4>
+      <div class="footer-column">
+        <h4>GET IN TOUCH</h4>
         <p><i class="fa-solid fa-envelope"></i> hello@foodora.com</p>
         <p><i class="fa-solid fa-phone"></i> +91 98765 43210</p>
+        <p><i class="fa-solid fa-location-dot"></i> India</p>
       </div>
 
     </div>
 
     <div class="footer-bottom">
-      <p>© <span id="year"></span> FOODORA. All Rights Reserved.</p>
-      <p>Made with <i class="fa-solid fa-heart"></i> for food lovers.</p>
+      <p>© <span id="year"></span> Foodora. All Rights Reserved.</p>
+      <p>MADE FOR FOOD LOVERS.</p>
     </div>
 
   </footer>
 
 
+  <!-- SEARCH POPUP -->
+  <div class="search-overlay" id="searchOverlay" aria-hidden="true">
+
+    <div class="search-box" role="dialog" aria-modal="true" aria-label="Search products">
+
+      <div class="search-input-wrap">
+
+        <input
+          type="search"
+          id="searchInput"
+          placeholder="Search food products..."
+          aria-label="Search food products"
+        >
+
+        <button class="search-submit" id="searchSubmit" type="button">
+          Search
+        </button>
+
+        <button class="search-close" id="searchClose" type="button" aria-label="Close Search">
+          &times;
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- TOAST -->
   <div class="toast" id="toast"></div>
 
+
+  <!-- JAVASCRIPT -->
   <script src="../app.js"></script>
   <script src="cart.js"></script>
 
