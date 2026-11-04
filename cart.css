@@ -861,4 +861,197 @@
 
 body.search-open {
     overflow: hidden;
+}/* =====================================
+   CART MOBILE RESPONSIVE FIX
+===================================== */
+
+@media screen and (max-width: 768px) {
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .cart-hero {
+        width: 100%;
+        padding: 35px 15px !important;
+        box-sizing: border-box;
+    }
+
+    .cart-hero h1 {
+        font-size: 32px !important;
+    }
+
+    .cart-section {
+        width: 100%;
+        padding: 25px 15px !important;
+        box-sizing: border-box;
+    }
+
+    .cart-layout {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100%;
+        gap: 22px !important;
+    }
+
+    .cart-main {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .cart-heading {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 10px;
+    }
+
+    .cart-table-wrapper {
+        width: 100%;
+        overflow: visible !important;
+    }
+
+    .cart-table {
+        width: 100%;
+        min-width: 0 !important;
+        display: block;
+    }
+
+    .cart-table thead {
+        display: none !important;
+    }
+
+    .cart-table tbody {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .cart-table tbody tr {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        width: 100%;
+        padding: 14px !important;
+        box-sizing: border-box;
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+    }
+
+    .cart-table tbody td {
+        padding: 0 !important;
+        border: none !important;
+        min-width: 0;
+    }
+
+    .cart-table tbody td:first-child {
+        grid-column: 1 / -1;
+        padding-bottom: 12px !important;
+        border-bottom: 1px solid var(--border) !important;
+    }
+
+    .cart-product {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        min-width: 0;
+    }
+
+    .cart-product img {
+        width: 65px !important;
+        height: 65px !important;
+        flex-shrink: 0;
+    }
+
+    .cart-product-info h4 {
+        font-size: 12px !important;
+    }
+
+    .cart-table tbody td:nth-child(2)::before {
+        content: "PRICE";
+        display: block;
+        margin-bottom: 7px;
+        font-size: 9px;
+        font-weight: 800;
+        color: var(--muted);
+    }
+
+    .cart-table tbody td:nth-child(3)::before {
+        content: "QUANTITY";
+        display: block;
+        margin-bottom: 7px;
+        font-size: 9px;
+        font-weight: 800;
+        color: var(--muted);
+    }
+
+    .cart-table tbody td:nth-child(4) {
+        grid-column: 1;
+    }
+
+    .cart-table tbody td:nth-child(4)::before {
+        content: "TOTAL";
+        display: block;
+        margin-bottom: 7px;
+        font-size: 9px;
+        font-weight: 800;
+        color: var(--muted);
+    }
+
+    .cart-table tbody td:nth-child(5) {
+        grid-column: 2;
+        justify-self: end;
+        align-self: center;
+    }
+
+    .cart-quantity {
+        width: 100px;
+    }
+
+    .cart-bottom-actions {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .cart-summary {
+        position: static !important;
+        width: 100% !important;
+        box-sizing: border-box;
+        padding: 22px 16px !important;
+    }
+
+    .cart-benefits {
+        display: grid;
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+        padding: 25px 20px !important;
+    }
+
+    .cart-benefit {
+        justify-content: flex-start;
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+    .cart-hero h1 {
+        font-size: 28px !important;
+    }
+
+    .cart-product img {
+        width: 55px !important;
+        height: 55px !important;
+    }
+
+    .cart-product-info h4 {
+        font-size: 11px !important;
+    }
+
+    .cart-summary {
+        padding: 18px 13px !important;
+    }
 }
