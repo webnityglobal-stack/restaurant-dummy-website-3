@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Order Successful | FOODORA</title>
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="order-success.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+
+            <a href="../index.html" class="logo">
+                FOODORA<span>.</span>
+                <small>GOOD FOOD. GOOD MOOD.</small>
+            </a>
+
+            <div class="header-actions">
+                <a href="shop.html" class="success-home-link">
+                    Continue Shopping
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+
+        </div>
+    </header>
+
+    <main class="success-page">
+
+        <div class="container">
+
+            <!-- Success Message -->
+            <section class="success-banner">
+
+                <div class="success-animation">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+
+                <span class="success-label">ORDER CONFIRMED</span>
+
+                <h1>Thank You for Your Order!</h1>
+
+                <p>
+                    Your order has been successfully placed.
+                    We're preparing something delicious for you!
+                </p>
+
+                <div class="success-order-id">
+                    <span>ORDER ID</span>
+                    <strong id="successOrderId">Loading...</strong>
+                </div>
+
+            </section>
+
+            <!-- Delivery Information -->
+            <section class="delivery-card">
+
+                <div class="delivery-card-heading">
+                    <div>
+                        <span class="section-tag">YOUR DELIVERY</span>
+                        <h2>Track Your Order</h2>
+                    </div>
+
+                    <div class="delivery-status" id="currentStatus">
+                        Order Placed
+                    </div>
+                </div>
+
+                <div class="delivery-info">
+
+                    <div class="delivery-info-item">
+                        <i class="fa-solid fa-calendar-check"></i>
+                        <div>
+                            <span>Order Date</span>
+                            <strong id="orderDate">--</strong>
+                        </div>
+                    </div>
+
+                    <div class="delivery-info-item">
+                        <i class="fa-solid fa-truck-fast"></i>
+                        <div>
+                            <span>Estimated Delivery</span>
+                            <strong id="deliveryDate">Calculating...</strong>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Tracking Timeline -->
+                <div class="tracking-timeline" id="trackingTimeline">
+
+                    <div class="tracking-step completed">
+                        <div class="tracking-icon">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+
+                        <div class="tracking-content">
+                            <h3>Order Placed</h3>
+                            <p>Your order has been successfully received.</p>
+                            <span id="placedTime">Completed</span>
+                        </div>
+                    </div>
+
+                    <div class="tracking-step">
+                        <div class="tracking-icon">
+                            <i class="fa-solid fa-box"></i>
+                        </div>
+
+                        <div class="tracking-content">
+                            <h3>Processing</h3>
+                            <p>Your products are being prepared.</p>
+                        </div>
+                    </div>
+
+                    <div class="tracking-step">
+                        <div class="tracking-icon">
+                            <i class="fa-solid fa-truck"></i>
+                        </div>
+
+                        <div class="tracking-content">
+                            <h3>Shipped</h3>
+                            <p>Your order is on its way.</p>
+                        </div>
+                    </div>
+
+                    <div class="tracking-step">
+                        <div class="tracking-icon">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+
+                        <div class="tracking-content">
+                            <h3>Out for Delivery</h3>
+                            <p>Your order is arriving soon.</p>
+                        </div>
+                    </div>
+
+                    <div class="tracking-step">
+                        <div class="tracking-icon">
+                            <i class="fa-solid fa-house-circle-check"></i>
+                        </div>
+
+                        <div class="tracking-content">
+                            <h3>Delivered</h3>
+                            <p>Your order has been delivered. Enjoy!</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <p class="tracking-note">
+                    <i class="fa-solid fa-circle-info"></i>
+                    Tracking updates will appear here once connected to the delivery system.
+                </p>
+
+            </section>
+
+            <!-- Order Details -->
+            <section class="order-details-card">
+
+                <div class="order-details-heading">
+                    <h2>Order Details</h2>
+                    <span id="paymentMethod">Cash on Delivery</span>
+                </div>
+
+                <div id="successProducts" class="success-products">
+                    <!-- Products loaded by JS -->
+                </div>
+
+                <div class="success-price-details">
+
+                    <div>
+                        <span>Subtotal</span>
+                        <strong id="successSubtotal">₹0</strong>
+                    </div>
+
+                    <div>
+                        <span>Delivery Charges</span>
+                        <strong id="successShipping">₹0</strong>
+                    </div>
+
+                    <div>
+                        <span>Discount</span>
+                        <strong id="successDiscount">₹0</strong>
+                    </div>
+
+                    <div class="success-total">
+                        <span>Total Amount</span>
+                        <strong id="successTotal">₹0</strong>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- Delivery Address -->
+            <section class="address-card">
+
+                <div class="address-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+
+                <div>
+                    <h3>Delivery Address</h3>
+                    <strong id="customerName">Customer Name</strong>
+                    <p id="customerAddress">Loading address...</p>
+                    <p id="customerPhone"></p>
+                </div>
+
+            </section>
+
+            <!-- Bottom Buttons -->
+            <div class="success-actions">
+
+                <a href="shop.html" class="btn btn-primary">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    Continue Shopping
+                </a>
+
+                <button class="print-order-btn" onclick="window.print()">
+                    <i class="fa-solid fa-print"></i>
+                    Print Order
+                </button>
+
+            </div>
+
+            <p class="success-thankyou">
+                Made with <i class="fa-solid fa-heart"></i> by FOODORA
+            </p>
+
+        </div>
+
+    </main>
+
+    <script src="order-success.js"></script>
+
+</body>
+</html>

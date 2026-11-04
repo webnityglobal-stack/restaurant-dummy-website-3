@@ -1,0 +1,463 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Product Details | FOODORA</title>
+  <meta name="description" content="Explore premium quality food products at FOODORA.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../product.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    <p>FREE SHIPPING ON ORDERS ABOVE ₹499 | GOOD FOOD. BETTER LIVING.</p>
+  </div>
+
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-container">
+
+      <a href="../index.html" class="logo">
+        FOOD<span>ORA</span><small>.</small>
+      </a>
+
+      <nav class="navbar" id="navbar">
+        <a href="../index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="../index.html#categories">Categories</a>
+        <a href="../index.html#best-sellers">Best Sellers</a>
+        <a href="../index.html#our-story">Our Story</a>
+      </nav>
+
+      <div class="header-actions">
+
+        <button class="header-icon" aria-label="Search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+
+        <a href="wishlist.html" class="header-icon" aria-label="Wishlist">
+          <i class="fa-regular fa-heart"></i>
+        </a>
+
+        <a href="cart.html" class="header-icon cart-icon" aria-label="Cart">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="cart-count" id="cartCount">0</span>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+      </div>
+    </div>
+  </header>
+
+
+  <!-- Breadcrumb -->
+  <div class="product-breadcrumb">
+    <a href="../index.html">Home</a>
+    <i class="fa-solid fa-chevron-right"></i>
+    <a href="shop.html">Shop</a>
+    <i class="fa-solid fa-chevron-right"></i>
+    <span>Product Details</span>
+  </div>
+
+
+  <!-- Product Details -->
+  <section class="product-details-section">
+
+    <div class="product-details-container">
+
+      <!-- Product Gallery -->
+      <div class="product-gallery">
+
+        <div class="product-main-image">
+          <span class="detail-badge">BEST SELLER</span>
+
+          <img
+            id="mainProductImage"
+            src="https://images.unsplash.com/photo-1548907040-4d42c7f8e2b7?w=900&q=90"
+            alt="Premium Chocolate Bites"
+          >
+
+          <button class="gallery-zoom" aria-label="View product image">
+            <i class="fa-solid fa-expand"></i>
+          </button>
+        </div>
+
+        <div class="product-thumbnails">
+
+          <button class="thumbnail active" data-image="https://images.unsplash.com/photo-1548907040-4d42c7f8e2b7?w=900&q=90">
+            <img src="https://images.unsplash.com/photo-1548907040-4d42c7f8e2b7?w=200&q=80" alt="Product image 1">
+          </button>
+
+          <button class="thumbnail" data-image="https://images.unsplash.com/photo-1511381939415-e44015466834?w=900&q=90">
+            <img src="https://images.unsplash.com/photo-1511381939415-e44015466834?w=200&q=80" alt="Product image 2">
+          </button>
+
+          <button class="thumbnail" data-image="https://images.unsplash.com/photo-1481391319762-47dff72954d9?w=900&q=90">
+            <img src="https://images.unsplash.com/photo-1481391319762-47dff72954d9?w=200&q=80" alt="Product image 3">
+          </button>
+
+          <button class="thumbnail" data-image="https://images.unsplash.com/photo-1549007994-cb92caebd54b?w=900&q=90">
+            <img src="https://images.unsplash.com/photo-1549007994-cb92caebd54b?w=200&q=80" alt="Product image 4">
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- Product Information -->
+      <div class="product-details-info">
+
+        <span class="detail-category">PREMIUM HEALTHY SNACKS</span>
+
+        <h1 id="detailProductName">Premium Chocolate Bites</h1>
+
+        <div class="detail-rating">
+          <div class="rating-stars">★★★★★</div>
+          <span>4.8</span>
+          <a href="#productReviews">(48 Customer Reviews)</a>
+        </div>
+
+        <p class="detail-short-description">
+          Experience delicious goodness with our premium chocolate bites.
+          Carefully selected ingredients bring you a delightful snacking experience.
+        </p>
+
+
+        <!-- Price -->
+        <div class="detail-price">
+          <strong id="detailProductPrice">₹299</strong>
+          <del>₹399</del>
+          <span class="discount-label">25% OFF</span>
+        </div>
+
+        <p class="tax-note">Inclusive of all taxes</p>
+
+
+        <!-- Stock -->
+        <div class="stock-status">
+          <span class="stock-dot"></span>
+          In Stock - Ready to Ship
+        </div>
+
+
+        <!-- Weight Selection -->
+        <div class="weight-selection">
+          <h4>Select Pack Size</h4>
+
+          <div class="weight-options">
+            <button class="weight-option active" data-weight="100g">100g</button>
+            <button class="weight-option" data-weight="250g">250g</button>
+            <button class="weight-option" data-weight="500g">500g</button>
+          </div>
+        </div>
+
+
+        <!-- Quantity -->
+        <div class="quantity-section">
+
+          <h4>Quantity</h4>
+
+          <div class="quantity-control">
+            <button id="decreaseQty" aria-label="Decrease quantity">
+              <i class="fa-solid fa-minus"></i>
+            </button>
+
+            <span id="productQuantity">1</span>
+
+            <button id="increaseQty" aria-label="Increase quantity">
+              <i class="fa-solid fa-plus"></i>
+            </button>
+          </div>
+
+        </div>
+
+
+        <!-- Action Buttons -->
+        <div class="product-action-buttons">
+
+          <button class="detail-add-cart" id="detailAddToCart">
+            <i class="fa-solid fa-bag-shopping"></i>
+            ADD TO CART
+          </button>
+
+          <button class="detail-wishlist" id="detailWishlist" aria-label="Add to wishlist">
+            <i class="fa-regular fa-heart"></i>
+          </button>
+
+        </div>
+
+
+        <!-- Delivery Information -->
+        <div class="delivery-information">
+
+          <div class="delivery-item">
+            <i class="fa-solid fa-truck-fast"></i>
+            <div>
+              <h4>Free Shipping</h4>
+              <p>On orders above ₹499</p>
+            </div>
+          </div>
+
+          <div class="delivery-item">
+            <i class="fa-solid fa-shield-halved"></i>
+            <div>
+              <h4>Quality Assured</h4>
+              <p>Carefully selected products</p>
+            </div>
+          </div>
+
+          <div class="delivery-item">
+            <i class="fa-solid fa-box-open"></i>
+            <div>
+              <h4>Secure Packaging</h4>
+              <p>Freshness protected packaging</p>
+            </div>
+          </div>
+
+        </div>
+
+
+        <!-- Product Meta -->
+        <div class="product-meta">
+          <p><strong>SKU:</strong> FD-101</p>
+          <p><strong>Category:</strong> Healthy Snacks</p>
+          <p><strong>Availability:</strong> In Stock</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Product Information Tabs -->
+  <section class="product-information-section">
+
+    <div class="information-tabs">
+      <button class="info-tab active" data-tab="description">Description</button>
+      <button class="info-tab" data-tab="ingredients">Ingredients</button>
+      <button class="info-tab" data-tab="shipping">Shipping Information</button>
+    </div>
+
+
+    <div class="information-content">
+
+      <div class="tab-panel active" id="description">
+        <h3>Product Description</h3>
+        <p>
+          Discover a delightful snacking experience with FOODORA Premium
+          Chocolate Bites. Made for people who appreciate delicious food
+          and quality ingredients. Enjoy them during your breaks, celebrations
+          or whenever you crave something special.
+        </p>
+
+        <ul>
+          <li>Premium quality food product</li>
+          <li>Delicious taste and convenient packaging</li>
+          <li>Perfect for everyday snacking</li>
+          <li>Store in a cool and dry place</li>
+        </ul>
+      </div>
+
+
+      <div class="tab-panel" id="ingredients">
+        <h3>Ingredients & Storage</h3>
+        <p>
+          Please refer to the product packaging for the complete ingredient
+          list, allergen information and nutritional details.
+        </p>
+
+        <p>
+          Storage: Keep in a cool, dry place away from direct sunlight.
+          Always check the packaging for expiry and storage instructions.
+        </p>
+      </div>
+
+
+      <div class="tab-panel" id="shipping">
+        <h3>Shipping Information</h3>
+        <p>
+          Orders are processed after confirmation. Delivery timelines depend
+          on the customer's location and courier availability.
+        </p>
+
+        <ul>
+          <li>Free shipping on orders above ₹499</li>
+          <li>Secure packaging</li>
+          <li>Order tracking information after dispatch</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Related Products -->
+  <section class="related-products-section">
+
+    <div class="related-heading">
+      <span class="section-eyebrow">YOU MAY ALSO LIKE</span>
+      <h2>Explore More Goodness</h2>
+      <p>Discover more favourites from our collection.</p>
+    </div>
+
+    <div class="related-products-grid">
+
+      <article class="product-card">
+
+        <div class="product-image">
+          <span class="product-badge">POPULAR</span>
+          <button class="wishlist-btn" aria-label="Add to wishlist">
+            <i class="fa-regular fa-heart"></i>
+          </button>
+
+          <img src="https://images.unsplash.com/photo-1505576399274-565b52d4ac71?w=600&q=85" alt="Royal Nut Selection">
+
+          <button class="quick-add" data-product-id="103">
+            ADD TO CART <i class="fa-solid fa-plus"></i>
+          </button>
+        </div>
+
+        <div class="product-info">
+          <span class="product-category">DRY FRUITS</span>
+          <h3>Royal Nut Selection</h3>
+          <div class="product-rating">★★★★★ <span>(52 Reviews)</span></div>
+          <div class="product-price"><strong>₹499</strong> <del>₹599</del></div>
+        </div>
+
+      </article>
+
+
+      <article class="product-card">
+
+        <div class="product-image">
+          <button class="wishlist-btn" aria-label="Add to wishlist">
+            <i class="fa-regular fa-heart"></i>
+          </button>
+
+          <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&q=85" alt="Garden Fresh Mix">
+
+          <button class="quick-add" data-product-id="102">
+            ADD TO CART <i class="fa-solid fa-plus"></i>
+          </button>
+        </div>
+
+        <div class="product-info">
+          <span class="product-category">ORGANIC FOODS</span>
+          <h3>Garden Fresh Mix</h3>
+          <div class="product-rating">★★★★★ <span>(36 Reviews)</span></div>
+          <div class="product-price"><strong>₹249</strong> <del>₹329</del></div>
+        </div>
+
+      </article>
+
+
+      <article class="product-card">
+
+        <div class="product-image">
+          <button class="wishlist-btn" aria-label="Add to wishlist">
+            <i class="fa-regular fa-heart"></i>
+          </button>
+
+          <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=600&q=85" alt="Fresh Fruit Drink">
+
+          <button class="quick-add" data-product-id="108">
+            ADD TO CART <i class="fa-solid fa-plus"></i>
+          </button>
+        </div>
+
+        <div class="product-info">
+          <span class="product-category">BEVERAGES</span>
+          <h3>Fresh Fruit Drink</h3>
+          <div class="product-rating">★★★★★ <span>(27 Reviews)</span></div>
+          <div class="product-price"><strong>₹179</strong> <del>₹229</del></div>
+        </div>
+
+      </article>
+
+    </div>
+
+    <div class="related-shop-link">
+      <a href="shop.html">VIEW ALL PRODUCTS <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+
+  </section>
+
+
+  <!-- Footer -->
+  <footer class="footer">
+
+    <div class="footer-container">
+
+      <div class="footer-brand">
+        <a href="../index.html" class="logo">FOOD<span>ORA</span><small>.</small></a>
+        <p>Good food, thoughtfully selected. Bringing goodness to your everyday life.</p>
+
+        <div class="social-links">
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <h4>Explore</h4>
+        <a href="../index.html">Home</a>
+        <a href="shop.html">Shop All</a>
+        <a href="../index.html#categories">Categories</a>
+        <a href="../index.html#our-story">Our Story</a>
+      </div>
+
+      <div class="footer-links">
+        <h4>Customer Care</h4>
+        <a href="contact.html">Contact Us</a>
+        <a href="cart.html">My Cart</a>
+        <a href="wishlist.html">Wishlist</a>
+        <a href="about.html">About Us</a>
+      </div>
+
+      <div class="footer-links">
+        <h4>Get In Touch</h4>
+        <p><i class="fa-solid fa-envelope"></i> hello@foodora.com</p>
+        <p><i class="fa-solid fa-phone"></i> +91 98765 43210</p>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> FOODORA. All Rights Reserved.</p>
+      <p>Made with <i class="fa-solid fa-heart"></i> for food lovers.</p>
+    </div>
+
+  </footer>
+
+
+  <div class="toast" id="toast"></div>
+
+  <script src="../app.js"></script>
+  <script src="../product.js"></script>
+
+</body>
+</html>

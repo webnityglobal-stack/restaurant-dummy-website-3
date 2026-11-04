@@ -1,0 +1,760 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Foodora | Premium Food Store</title>
+
+  <meta name="description" content="Discover premium food products at Foodora. Shop gourmet snacks, organic foods, healthy essentials and delicious treats.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- SEARCH POPUP CSS -->
+  <style>
+    .search-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+      z-index: 99999;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 100px 20px 20px;
+    }
+
+    .search-overlay.active {
+      display: flex;
+    }
+
+    .search-box {
+      background: #fff;
+      width: 100%;
+      max-width: 650px;
+      padding: 25px;
+      border-radius: 14px;
+      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+      animation: searchAppear 0.25s ease;
+    }
+
+    .search-input-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .search-input-wrap input {
+      flex: 1;
+      min-width: 0;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 7px;
+      outline: none;
+      font-size: 15px;
+      font-family: inherit;
+    }
+
+    .search-input-wrap input:focus {
+      border-color: #234b37;
+    }
+
+    .search-submit {
+      background: #234b37;
+      color: #fff;
+      border: none;
+      padding: 15px 20px;
+      border-radius: 7px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .search-close {
+      background: transparent;
+      border: none;
+      font-size: 28px;
+      cursor: pointer;
+      color: #333;
+      padding: 0 5px;
+    }
+
+    .search-toggle {
+      cursor: pointer;
+    }
+
+    body.search-open {
+      overflow: hidden;
+    }
+
+    @keyframes searchAppear {
+      from {
+        opacity: 0;
+        transform: translateY(-15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media(max-width: 480px) {
+      .search-overlay {
+        padding: 75px 12px 12px;
+      }
+
+      .search-box {
+        padding: 16px;
+      }
+
+      .search-input-wrap {
+        flex-wrap: wrap;
+      }
+
+      .search-input-wrap input {
+        width: 100%;
+        flex: 1 1 100%;
+      }
+
+      .search-submit {
+        flex: 1;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- ANNOUNCEMENT BAR -->
+  <div class="announcement-bar">
+    <p>FREE SHIPPING ON ORDERS ABOVE ₹999</p>
+    <span>Discover the taste of better living.</span>
+  </div>
+
+  <!-- HEADER -->
+  <header class="header">
+
+    <a href="index.html" class="logo">
+      foodora<span>.</span>
+      <small>GOOD FOOD. GOOD MOOD.</small>
+    </a>
+
+    <nav class="navbar" id="navbar">
+      <a href="index.html" class="active">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="#categories">Categories</a>
+      <a href="#bestsellers">Best Sellers</a>
+      <a href="#about">Our Story</a>
+    </nav>
+
+    <div class="header-actions">
+
+      <!-- SEARCH BUTTON -->
+      <button class="icon-btn search-toggle" id="searchToggle" type="button" aria-label="Open Search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+
+      <a href="wishlist.html" class="icon-btn" aria-label="Wishlist">
+        <i class="fa-regular fa-heart"></i>
+      </a>
+
+      <a href="cart.html" class="cart-icon" aria-label="Shopping cart">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span id="cartCount">0</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+
+  </header>
+
+  <main>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+
+      <div class="hero-content">
+
+        <div class="hero-tag">
+          <span></span>
+          A FRESH WAY TO EAT
+        </div>
+
+        <h1>
+          Good Food.<br>
+          <em>Better Living.</em>
+        </h1>
+
+        <p>
+          Discover delicious, thoughtfully selected food products
+          made for people who love great taste and quality.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="shop.html" class="btn-primary">
+            Shop Collection <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="hero-trust">
+
+          <div class="trust-item">
+            <i class="fa-solid fa-leaf"></i>
+            <span>Quality Products</span>
+          </div>
+
+          <div class="trust-item">
+            <i class="fa-solid fa-truck-fast"></i>
+            <span>Fast Delivery</span>
+          </div>
+
+          <div class="trust-item">
+            <i class="fa-solid fa-heart"></i>
+            <span>Made With Care</span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="hero-visual">
+
+        <div class="hero-image">
+          <img
+            src="https://images.unsplash.com/photo-1547592180-85f173990554?w=1200&auto=format&fit=crop"
+            alt="Fresh healthy food bowl">
+        </div>
+
+        <div class="hero-floating-card">
+          <div class="floating-icon">
+            <i class="fa-solid fa-star"></i>
+          </div>
+
+          <div>
+            <strong>Made for food lovers</strong>
+            <p>Discover your next favourite.</p>
+          </div>
+        </div>
+
+        <div class="hero-circle-text">
+          FRESH · TASTY · QUALITY
+        </div>
+
+      </div>
+
+      <div class="hero-decoration"></div>
+
+    </section>
+
+    <!-- BRAND FEATURES -->
+    <section class="features-strip">
+
+      <div>
+        <i class="fa-solid fa-seedling"></i>
+        <span>Carefully Selected</span>
+      </div>
+
+      <div>
+        <i class="fa-solid fa-box"></i>
+        <span>Quality Packaging</span>
+      </div>
+
+      <div>
+        <i class="fa-solid fa-truck-fast"></i>
+        <span>Reliable Delivery</span>
+      </div>
+
+      <div>
+        <i class="fa-solid fa-shield-halved"></i>
+        <span>Secure Shopping</span>
+      </div>
+
+    </section>
+
+    <!-- CATEGORIES -->
+    <section class="categories-section section-padding" id="categories">
+
+      <div class="section-heading">
+        <div>
+          <span class="section-label">EXPLORE OUR COLLECTION</span>
+          <h2>Shop By <em>Category</em></h2>
+          <p>Find something delicious for every moment.</p>
+        </div>
+
+        <a href="shop.html" class="view-link">
+          View All Categories <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+
+      <div class="category-grid">
+
+        <a href="shop.html?category=snacks" class="category-card">
+          <img src="https://images.unsplash.com/photo-1599490659213-e2b9527bd087?w=700&auto=format&fit=crop" alt="Snacks">
+          <div class="category-info">
+            <span>01</span>
+            <h3>Healthy Snacks</h3>
+            <p>Explore Collection ↗</p>
+          </div>
+        </a>
+
+        <a href="shop.html?category=organic" class="category-card">
+          <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?w=700&auto=format&fit=crop" alt="Organic food">
+          <div class="category-info">
+            <span>02</span>
+            <h3>Organic Foods</h3>
+            <p>Explore Collection ↗</p>
+          </div>
+        </a>
+
+        <a href="shop.html?category=dry-fruits" class="category-card">
+          <img src="https://images.unsplash.com/photo-1608797178974-15b35a64ede9?w=700&auto=format&fit=crop" alt="Dry fruits">
+          <div class="category-info">
+            <span>03</span>
+            <h3>Dry Fruits</h3>
+            <p>Explore Collection ↗</p>
+          </div>
+        </a>
+
+        <a href="shop.html?category=beverages" class="category-card">
+          <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=700&auto=format&fit=crop" alt="Beverages">
+          <div class="category-info">
+            <span>04</span>
+            <h3>Beverages</h3>
+            <p>Explore Collection ↗</p>
+          </div>
+        </a>
+
+      </div>
+
+    </section>
+
+    <!-- BEST SELLERS -->
+    <section class="products-section section-padding" id="bestsellers">
+
+      <div class="section-heading">
+        <div>
+          <span class="section-label">CUSTOMER FAVOURITES</span>
+          <h2>Our Best <em>Sellers</em></h2>
+          <p>Popular picks that deserve a place in your kitchen.</p>
+        </div>
+
+        <a href="shop.html" class="view-link">
+          Shop All Products <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+
+      <div class="product-grid" id="bestSellerProducts">
+
+        <!-- PRODUCT 1 -->
+        <article class="product-card">
+          <div class="product-image">
+            <span class="product-badge">BESTSELLER</span>
+            <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=700&auto=format&fit=crop" alt="Chocolate snack">
+
+            <button class="wishlist-btn" aria-label="Add to wishlist">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+
+            <button class="quick-add" data-product-id="101">
+              <i class="fa-solid fa-plus"></i> Add to Cart
+            </button>
+          </div>
+
+          <div class="product-info">
+            <span class="product-category">GOURMET SNACKS</span>
+            <h3>Premium Chocolate Bites</h3>
+            <div class="product-rating">
+              <span>★★★★★</span>
+              <small>(24 Reviews)</small>
+            </div>
+            <div class="product-price">
+              <strong>₹299</strong>
+              <del>₹349</del>
+            </div>
+          </div>
+        </article>
+
+        <!-- PRODUCT 2 -->
+        <article class="product-card">
+          <div class="product-image">
+            <span class="product-badge new">NEW ARRIVAL</span>
+            <img src="https://images.unsplash.com/photo-1505576399274-565b52d4ac71?w=700&auto=format&fit=crop" alt="Healthy salad">
+
+            <button class="wishlist-btn" aria-label="Add to wishlist">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+
+            <button class="quick-add" data-product-id="102">
+              <i class="fa-solid fa-plus"></i> Add to Cart
+            </button>
+          </div>
+
+          <div class="product-info">
+            <span class="product-category">HEALTHY FOODS</span>
+            <h3>Garden Fresh Mix</h3>
+            <div class="product-rating">
+              <span>★★★★★</span>
+              <small>(18 Reviews)</small>
+            </div>
+            <div class="product-price">
+              <strong>₹249</strong>
+              <del>₹299</del>
+            </div>
+          </div>
+        </article>
+
+        <!-- PRODUCT 3 -->
+        <article class="product-card">
+          <div class="product-image">
+            <span class="product-badge">POPULAR</span>
+            <img src="https://images.unsplash.com/photo-1536591375667-f4d1ec2a1a5a?w=700&auto=format&fit=crop" alt="Nuts and dry fruits">
+
+            <button class="wishlist-btn" aria-label="Add to wishlist">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+
+            <button class="quick-add" data-product-id="103">
+              <i class="fa-solid fa-plus"></i> Add to Cart
+            </button>
+          </div>
+
+          <div class="product-info">
+            <span class="product-category">DRY FRUITS</span>
+            <h3>Royal Nut Selection</h3>
+            <div class="product-rating">
+              <span>★★★★★</span>
+              <small>(32 Reviews)</small>
+            </div>
+            <div class="product-price">
+              <strong>₹499</strong>
+              <del>₹599</del>
+            </div>
+          </div>
+        </article>
+
+        <!-- PRODUCT 4 -->
+        <article class="product-card">
+          <div class="product-image">
+            <span class="product-badge new">TRENDING</span>
+            <img src="https://images.unsplash.com/photo-1547595628-c61a29f496f0?w=700&auto=format&fit=crop" alt="Fresh food bowl">
+
+            <button class="wishlist-btn" aria-label="Add to wishlist">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+
+            <button class="quick-add" data-product-id="104">
+              <i class="fa-solid fa-plus"></i> Add to Cart
+            </button>
+          </div>
+
+          <div class="product-info">
+            <span class="product-category">GOURMET FOODS</span>
+            <h3>Signature Food Mix</h3>
+            <div class="product-rating">
+              <span>★★★★★</span>
+              <small>(15 Reviews)</small>
+            </div>
+            <div class="product-price">
+              <strong>₹349</strong>
+              <del>₹399</del>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- PROMOTIONAL BANNER -->
+    <section class="offer-section">
+
+      <div class="offer-image">
+        <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=1200&auto=format&fit=crop" alt="Fresh gourmet food selection">
+      </div>
+
+      <div class="offer-content">
+        <span class="section-label">A LITTLE SOMETHING SPECIAL</span>
+
+        <h2>
+          Make Every<br>
+          Bite <em>Count.</em>
+        </h2>
+
+        <p>
+          Discover your favourite flavours and bring
+          something delicious to your everyday routine.
+        </p>
+
+        <a href="shop.html" class="btn-light">
+          Explore Offers <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+
+    </section>
+
+    <!-- TRENDING PRODUCTS -->
+    <section class="trending-section section-padding">
+
+      <div class="section-heading">
+        <div>
+          <span class="section-label">THE LATEST FINDS</span>
+          <h2>Trending <em>Now</em></h2>
+          <p>Fresh discoveries for your next food adventure.</p>
+        </div>
+
+        <a href="shop.html" class="view-link">
+          Explore More <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+
+      <div class="trending-banner">
+
+        <div class="trending-content">
+          <span>FOODORA COLLECTION</span>
+          <h3>Something Delicious<br>Is Waiting For You.</h3>
+          <a href="shop.html">Discover Products ↗</a>
+        </div>
+
+        <div class="trending-image">
+          <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=1000&auto=format&fit=crop" alt="Fresh ingredients and healthy food">
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- WHY FOODORA -->
+    <section class="why-section section-padding" id="about">
+
+      <div class="why-heading">
+        <span class="section-label">THE FOODORA DIFFERENCE</span>
+        <h2>More Than Food.<br><em>A Better Experience.</em></h2>
+      </div>
+
+      <div class="why-grid">
+
+        <div class="why-card">
+          <i class="fa-solid fa-leaf"></i>
+          <h3>Thoughtfully Selected</h3>
+          <p>Discover food products selected with care and attention to quality.</p>
+        </div>
+
+        <div class="why-card">
+          <i class="fa-solid fa-box-open"></i>
+          <h3>Quality Packaging</h3>
+          <p>Products packed carefully to make your shopping experience better.</p>
+        </div>
+
+        <div class="why-card">
+          <i class="fa-solid fa-truck-fast"></i>
+          <h3>Easy Delivery</h3>
+          <p>Enjoy a convenient shopping experience with reliable delivery.</p>
+        </div>
+
+        <div class="why-card">
+          <i class="fa-solid fa-headset"></i>
+          <h3>Customer Support</h3>
+          <p>We're here to help make your experience smooth and simple.</p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="newsletter-section">
+
+      <div class="newsletter-content">
+        <span class="section-label">STAY IN THE LOOP</span>
+        <h2>A Taste Of <em>Something Good.</em></h2>
+        <p>Get product updates, fresh discoveries and exclusive offers.</p>
+
+        <form id="newsletterForm" class="newsletter-form">
+          <input type="email" placeholder="Enter your email address" required>
+
+          <button type="submit">
+            Subscribe <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </form>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <div class="footer-main">
+
+      <div class="footer-brand">
+        <a href="index.html" class="logo footer-logo">
+          foodora<span>.</span>
+          <small>GOOD FOOD. GOOD MOOD.</small>
+        </a>
+
+        <p>
+          Bringing good food and better experiences
+          closer to your everyday life.
+        </p>
+
+        <div class="social-links">
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-column">
+        <h4>QUICK LINKS</h4>
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="#categories">Categories</a>
+        <a href="#about">About Us</a>
+      </div>
+
+      <div class="footer-column">
+        <h4>CUSTOMER CARE</h4>
+        <a href="pages/contact.html">Contact Us</a>
+        <a href="#">Shipping Policy</a>
+        <a href="#">Return Policy</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+
+      <div class="footer-column">
+        <h4>GET IN TOUCH</h4>
+        <p><i class="fa-solid fa-envelope"></i> hello@foodora.com</p>
+        <p><i class="fa-solid fa-phone"></i> +91 98765 43210</p>
+        <p><i class="fa-solid fa-location-dot"></i> India</p>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> Foodora. All Rights Reserved.</p>
+      <p>MADE FOR FOOD LOVERS.</p>
+    </div>
+
+  </footer>
+
+  <!-- SEARCH POPUP -->
+  <div class="search-overlay" id="searchOverlay" aria-hidden="true">
+
+    <div class="search-box" role="dialog" aria-modal="true" aria-label="Search products">
+
+      <div class="search-input-wrap">
+
+        <input
+          type="search"
+          id="searchInput"
+          placeholder="Search food products..."
+          aria-label="Search food products"
+        >
+
+        <button class="search-submit" id="searchSubmit" type="button">
+          Search
+        </button>
+
+        <button class="search-close" id="searchClose" type="button" aria-label="Close Search">
+          &times;
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast"></div>
+
+  <!-- MAIN JAVASCRIPT -->
+  <script src="app.js"></script>
+
+  <!-- SEARCH JAVASCRIPT -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+      const searchToggle = document.getElementById("searchToggle");
+      const searchOverlay = document.getElementById("searchOverlay");
+      const searchInput = document.getElementById("searchInput");
+      const searchClose = document.getElementById("searchClose");
+      const searchSubmit = document.getElementById("searchSubmit");
+
+      if (!searchToggle || !searchOverlay || !searchInput) return;
+
+      // Open Search Popup
+      searchToggle.addEventListener("click", function () {
+        searchOverlay.classList.add("active");
+        searchOverlay.setAttribute("aria-hidden", "false");
+        document.body.classList.add("search-open");
+
+        setTimeout(function () {
+          searchInput.focus();
+        }, 100);
+      });
+
+      // Close Search Popup
+      function closeSearch() {
+        searchOverlay.classList.remove("active");
+        searchOverlay.setAttribute("aria-hidden", "true");
+        document.body.classList.remove("search-open");
+      }
+
+      searchClose.addEventListener("click", closeSearch);
+
+      // Close when clicking outside
+      searchOverlay.addEventListener("click", function (event) {
+        if (event.target === searchOverlay) {
+          closeSearch();
+        }
+      });
+
+      // Search Products
+      function performSearch() {
+        const query = searchInput.value.trim();
+
+        if (!query) {
+          searchInput.focus();
+          return;
+        }
+
+        window.location.href =
+          "shop.html?search=" + encodeURIComponent(query);
+      }
+
+      searchSubmit.addEventListener("click", performSearch);
+
+      // Enter key search and Escape key close
+      searchInput.addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+          performSearch();
+        }
+
+        if (event.key === "Escape") {
+          closeSearch();
+        }
+      });
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+          closeSearch();
+        }
+      });
+
+    });
+  </script>
+
+</body>
+</html>

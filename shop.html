@@ -1,0 +1,415 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop All Products | FOODORA</title>
+  <meta name="description" content="Shop premium snacks, organic foods, dry fruits and beverages at FOODORA.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../shop.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+  <!-- Announcement -->
+  <div class="announcement-bar">
+    <p>FREE SHIPPING ON ORDERS ABOVE ₹499 <span> | </span> GOOD FOOD. BETTER LIVING.</p>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-container">
+
+      <a href="../index.html" class="logo">
+        FOOD<span>ORA</span><small>.</small>
+      </a>
+
+      <nav class="navbar" id="navbar">
+        <a href="../index.html">Home</a>
+        <a href="shop.html" class="active">Shop</a>
+        <a href="../index.html#categories">Categories</a>
+        <a href="../index.html#best-sellers">Best Sellers</a>
+        <a href="../index.html#our-story">Our Story</a>
+       </nav>
+
+      <div class="header-actions">
+     <button class="header-icon" id="shopSearchToggle" type="button" aria-label="Search">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+
+        <a href="wishlist.html" class="header-icon" aria-label="Wishlist">
+          <i class="fa-regular fa-heart"></i>
+        </a>
+
+        <a href="cart.html" class="header-icon cart-icon" aria-label="Cart">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="cart-count" id="cartCount">0</span>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+
+  <!-- Shop Hero -->
+ 
+
+  <!-- Shop Section -->
+  <section class="shop-section">
+
+    <div class="shop-heading">
+      <div>
+        <span class="section-eyebrow">EXPLORE OUR COLLECTION</span>
+        <h2>Shop All Products</h2>
+        <p>Find your everyday favourites.</p>
+      </div>
+
+      <div class="shop-result-count">
+        <span id="productCount">8</span> Products
+      </div>
+    </div>
+  
+
+    <!-- Shop Toolbar -->
+    <div class="shop-toolbar">
+
+      <div class="shop-search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="search" id="productSearch" placeholder="Search products...">
+      </div>
+
+      <div class="shop-sort">
+        <label for="sortProducts">Sort By:</label>
+        <select id="sortProducts">
+          <option value="featured">Featured</option>
+          <option value="low-high">Price: Low to High</option>
+          <option value="high-low">Price: High to Low</option>
+          <option value="name">Name: A to Z</option>
+        </select>
+      </div>
+
+    </div>
+
+
+    <div class="shop-layout">
+
+      <!-- Sidebar -->
+      <aside class="shop-sidebar">
+
+        <div class="sidebar-heading">
+          <h3>Categories</h3>
+          <i class="fa-solid fa-sliders"></i>
+        </div>
+
+        <div class="category-filter">
+
+          <button class="filter-btn active" data-category="all">
+            <span>All Products</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+
+          <button class="filter-btn" data-category="snacks">
+            <span>Healthy Snacks</span>
+          </button>
+
+          <button class="filter-btn" data-category="organic">
+            <span>Organic Foods</span>
+          </button>
+
+          <button class="filter-btn" data-category="dry-fruits">
+            <span>Dry Fruits & Nuts</span>
+          </button>
+
+          <button class="filter-btn" data-category="beverages">
+            <span>Beverages</span>
+          </button>
+
+        </div>
+
+        <div class="sidebar-offer">
+          <span>FOODORA SPECIAL</span>
+          <h3>Eat Better.<br>Live Better.</h3>
+          <p>Discover our premium food collection.</p>
+          <a href="#shopProducts">Explore Now <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+      </aside>
+
+
+      <!-- Product Grid -->
+      <div class="shop-products-area">
+
+        <div class="active-filter-row">
+          <span id="activeCategory">All Products</span>
+          <button id="clearFilters">Clear Filters <i class="fa-solid fa-xmark"></i></button>
+        </div>
+
+        <div class="shop-product-grid" id="shopProducts">
+
+          <!-- Product 1 -->
+          <article class="product-card" data-category="snacks" data-price="299" data-name="Premium Chocolate Bites">
+
+            <div class="product-image">
+              <span class="product-badge">BEST SELLER</span>
+              <button class="wishlist-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
+
+              <img src="https://images.unsplash.com/photo-1548907040-4d42c7f8e2b7?w=600&q=85" alt="Premium Chocolate Bites">
+
+              <button class="quick-add" data-product-id="101">ADD TO CART <i class="fa-solid fa-plus"></i></button>
+            </div>
+
+            <div class="product-info">
+              <span class="product-category">HEALTHY SNACKS</span>
+              <h3>Premium Chocolate Bites</h3>
+              <div class="product-rating">★★★★★ <span>(48 Reviews)</span></div>
+              <div class="product-price"><strong>₹299</strong> <del>₹399</del></div>
+            </div>
+
+          </article>
+
+
+          <!-- Product 2 -->
+          <article class="product-card" data-category="organic" data-price="249" data-name="Garden Fresh Mix">
+
+            <div class="product-image">
+              <span class="product-badge">POPULAR</span>
+              <button class="wishlist-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
+
+              <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&q=85" alt="Garden Fresh Mix">
+
+              <button class="quick-add" data-product-id="102">ADD TO CART <i class="fa-solid fa-plus"></i></button>
+            </div>
+
+            <div class="product-info">
+              <span class="product-category">ORGANIC FOODS</span>
+              <h3>Garden Fresh Mix</h3>
+              <div class="product-rating">★★★★★ <span>(36 Reviews)</span></div>
+              <div class="product-price"><strong>₹249</strong> <del>₹329</del></div>
+            </div>
+
+          </article>
+
+
+          <!-- Product 3 -->
+          <article class="product-card" data-category="dry-fruits" data-price="499" data-name="Royal Nut Selection">
+
+            <div class="product-image">
+              <span class="product-badge">PREMIUM</span>
+              <button class="wishlist-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
+
+              <img src="https://images.unsplash.com/photo-1505576399274-565b52d4ac71?w=600&q=85" alt="Royal Nut Selection">
+
+              <button class="quick-add" data-product-id="103">ADD TO CART <i class="fa-solid fa-plus"></i></button>
+            </div>
+
+            <div class="product-info">
+              <span class="product-category">DRY FRUITS</span>
+              <h3>Royal Nut Selection</h3>
+              <div class="product-rating">★★★★★ <span>(52 Reviews)</span></div>
+              <div class="product-price"><strong>₹499</strong> <del>₹599</del></div>
+            </div>
+
+          </article>
+
+
+          <!-- Product 4 -->
+          <article class="product-card" data-category="beverages" data-price="349" data-name="Signature Food Mix">
+
+            <div class="product-image">
+              <span class="product-badge">NEW</span>
+              <button class="wishlist-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
+
+              <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=600&q=85" alt="Signature Food Mix">
+
+              <button class="quick-add" data-product-id="104">ADD TO CART <i class="fa-solid fa-plus"></i></button>
+            </div>
+
+            <div class="product-info">
+              <span class="product-category">BEVERAGES</span>
+              <h3>Signature Food Mix</h3>
+              <div class="product-rating">★★★★☆ <span>(29 Reviews)</span></div>
+              <div class="product-price"><strong>₹349</strong> <del>₹449</del></div>
+            </div>
+
+          </article>
+
+
+          <!-- Product 5 -->
+          <article class="product-card" data-category="snacks" data-price="199" data-name="Crunchy Makhana">
+
+            <div class="product-image">
+              <button class="wishlist-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
+
+              <img src="https://images.unsplash.com/photo-1599599810694-b5ac4ddc2f18?w=600&q=85" alt="Crunchy Makhana">
+
+              <button class="quick-add" data-product-id="105">ADD TO CART <i class="fa-solid fa-plus"></i></button>
+            </div>
+
+            <div class="product-info">
+              <span class="product-category">HEALTHY SNACKS</span>
+              <h3>Crunchy Makhana</h3>
+              <div class="product-rating">★★★★★ <span>(41 Reviews)</span></div>
+              <div class="product-price"><strong>₹199</strong> <del>₹249</del></div>
+            </div>
+
+          </article>
+
+
+          <!-- Product 6 -->
+          <article class="product-card" data-category="dry-fruits" data-price="399" data-name="Premium Almonds">
+
+            <div class="product-image">
+              <button class="wishlist-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
+
+              <img src="https://images.unsplash.com/photo-1508061253366-f7da158b6d46?w=600&q=85" alt="Premium Almonds">
+
+              <button class="quick-add" data-product-id="106">ADD TO CART <i class="fa-solid fa-plus"></i></button>
+            </div>
+
+            <div class="product-info">
+              <span class="product-category">DRY FRUITS</span>
+              <h3>Premium Almonds</h3>
+              <div class="product-rating">★★★★★ <span>(63 Reviews)</span></div>
+              <div class="product-price"><strong>₹399</strong> <del>₹499</del></div>
+            </div>
+
+          </article>
+
+
+          <!-- Product 7 -->
+          <article class="product-card" data-category="organic" data-price="279" data-name="Organic Green Bowl">
+
+            <div class="product-image">
+              <span class="product-badge">ORGANIC</span>
+              <button class="wishlist-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
+
+              <img src="https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?w=600&q=85" alt="Organic Green Bowl">
+
+              <button class="quick-add" data-product-id="107">ADD TO CART <i class="fa-solid fa-plus"></i></button>
+            </div>
+
+            <div class="product-info">
+              <span class="product-category">ORGANIC FOODS</span>
+              <h3>Organic Green Bowl</h3>
+              <div class="product-rating">★★★★☆ <span>(32 Reviews)</span></div>
+              <div class="product-price"><strong>₹279</strong> <del>₹349</del></div>
+            </div>
+
+          </article>
+
+
+          <!-- Product 8 -->
+          <article class="product-card" data-category="beverages" data-price="179" data-name="Fresh Fruit Drink">
+
+            <div class="product-image">
+              <button class="wishlist-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
+
+              <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=600&q=85" alt="Fresh Fruit Drink">
+
+              <button class="quick-add" data-product-id="108">ADD TO CART <i class="fa-solid fa-plus"></i></button>
+            </div>
+
+            <div class="product-info">
+              <span class="product-category">BEVERAGES</span>
+              <h3>Fresh Fruit Drink</h3>
+              <div class="product-rating">★★★★★ <span>(27 Reviews)</span></div>
+              <div class="product-price"><strong>₹179</strong> <del>₹229</del></div>
+            </div>
+
+          </article>
+
+        </div>
+
+        <div class="no-products" id="noProducts" style="display:none;">
+          <i class="fa-solid fa-basket-shopping"></i>
+          <h3>No Products Found</h3>
+          <p>Try changing your search or category filter.</p>
+          <button id="resetShop">View All Products</button>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Newsletter -->
+  <section class="newsletter-section">
+    <div class="newsletter-content">
+      <span class="section-eyebrow">STAY IN THE LOOP</span>
+      <h2>Goodness Delivered<br>To Your Inbox.</h2>
+      <p>Get updates about new arrivals, exclusive offers and healthy food inspiration.</p>
+
+      <form class="newsletter-form" id="newsletterForm">
+        <input type="email" placeholder="Enter your email address" required>
+        <button type="submit">Subscribe <i class="fa-solid fa-arrow-right"></i></button>
+      </form>
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+
+      <div class="footer-brand">
+        <a href="../index.html" class="logo">FOOD<span>ORA</span><small>.</small></a>
+        <p>Good food, thoughtfully selected. Bringing goodness to your everyday life.</p>
+
+        <div class="social-links">
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <h4>Explore</h4>
+        <a href="../index.html">Home</a>
+        <a href="shop.html">Shop All</a>
+        <a href="../index.html#categories">Categories</a>
+        <a href="../index.html#our-story">Our Story</a>
+      </div>
+
+      <div class="footer-links">
+        <h4>Customer Care</h4>
+        <a href="contact.html">Contact Us</a>
+        <a href="cart.html">My Cart</a>
+        <a href="wishlist.html">Wishlist</a>
+        <a href="about.html">About Us</a>
+      </div>
+
+      <div class="footer-links">
+        <h4>Get In Touch</h4>
+        <p><i class="fa-solid fa-envelope"></i> hello@foodora.com</p>
+        <p><i class="fa-solid fa-phone"></i> +91 98765 43210</p>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> FOODORA. All Rights Reserved.</p>
+      <p>Made with <i class="fa-solid fa-heart"></i> for food lovers.</p>
+    </div>
+  </footer>
+
+
+  <div class="toast" id="toast"></div>
+
+  <script src="../app.js"></script>
+  <script src="../shop.js"></script>
+
+</body>
+</html>
