@@ -1764,3 +1764,23 @@ main > section {
         padding-bottom: 15px !important;
     }
 }
+/* NAVBAR FONT SIZE INCREASE */
+
+.header .navbar a {
+    font-size: 18px !important;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+}
+
+/* Active and Hover Links */
+.header .navbar a:hover,
+.header .navbar a.active {
+    font-weight: 700;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .header .navbar a {
+        font-size: 17px !important;
+    }
+}
