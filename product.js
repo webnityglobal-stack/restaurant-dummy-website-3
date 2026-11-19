@@ -480,4 +480,37 @@ weightOptions.forEach(option => {
 
   });
 
+});// =====================================
+// PRODUCT IMAGE THUMBNAIL SWITCHING
+// =====================================
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const mainImage = document.getElementById("mainProductImage");
+    const thumbnails = document.querySelectorAll(".product-thumbnails .thumbnail");
+
+    if (!mainImage || thumbnails.length === 0) return;
+
+    thumbnails.forEach(function (thumbnail) {
+
+        thumbnail.addEventListener("click", function () {
+
+            const imageUrl = thumbnail.dataset.image;
+
+            if (!imageUrl) return;
+
+            // Change main image
+            mainImage.src = imageUrl;
+
+            // Active thumbnail highlight
+            thumbnails.forEach(function (item) {
+                item.classList.remove("active");
+            });
+
+            thumbnail.classList.add("active");
+
+        });
+
+    });
+
 });
