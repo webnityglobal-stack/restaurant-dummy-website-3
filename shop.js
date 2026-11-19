@@ -348,5 +348,29 @@ const searchButton =
   setActiveCategory(selectedCategory);
 
   filterProducts();
+  
+/* PRODUCT DETAILS REDIRECT FIX */
+
+products.forEach(card => {
+
+  card.style.cursor = "pointer";
+
+  card.addEventListener("click", function(event) {
+
+    if (event.target.closest("button")) return;
+
+    const productButton = card.querySelector(".quick-add");
+
+    if (!productButton) return;
+
+    const productId = productButton.dataset.productId;
+
+    if (!productId) return;
+
+    window.location.href = "product.html?id=" + productId;
+
+  });
+
+});
 
 });
